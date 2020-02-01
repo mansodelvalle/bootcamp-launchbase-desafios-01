@@ -1,5 +1,5 @@
 /* ============================================
-        DESAFIO 2 - CRIAR UM PROGRAMA COM UM OBJETO PARA ARMAZENAR DADOS DE UM PROGRAMADOR
+        DESAFIO 3 - Vetores e objetos
    ============================================ */
 
     const dev = {

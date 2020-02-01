@@ -1,90 +1,52 @@
 /* ============================================
-        DESAFIO 7 - OPERAÇÕES BANCÁRIAS
+        DESAFIO 6 - Receitas e Despesas
    ============================================ */
 
-const user = {
-    name: 'Mariana',
-    transactions: [],
-    balance:0
-}
-
-
-function createTransaction(transaction) {
-    user.transactions.push(transaction)
-
-    if (transaction.type === 'credit') {
-        user.balance = user.balance + transaction.value
-    } else {
-        user.balance = user.balance - transaction.value
-    }
-}
-
-function showBalanceMessage()
-{
-    return user.balance
-}
-
-function getHigherTransactionByType(type)
-{  
-    
-    let higherTransactionValue = 0
-    let higherTransaction
-
-    for(let transaction of user.transactions)
+const usuarios = [
     {
-        if(transaction.type == type && transaction.value > higherTransactionValue)
-        {
-            higherTransactionValue = transaction.value
-            higherTransaction = transaction
+      nome: 'Salvio',
+      receitas: [115.3, 48.7, 98.3, 14.5],
+      despesas: [85.3, 13.5, 19.9]
+    },
+    {
+      nome: 'Marcio',
+      receitas: [24.6, 214.3, 45.3],
+      despesas: [185.3, 12.1, 120.0]
+    },
+    {
+      nome: 'Lucia',
+      receitas: [9.8, 120.3, 340.2, 45.3],
+      despesas: [450.2, 29.9]
+    }
+  ]
+
+  function calculaSaldo(receitas, despesas) 
+  {
+        const somaReceitas = somaNumeros(receitas)
+        const somaDespesas = somaNumeros(despesas)
+        
+        return somaReceitas - somaDespesas
+  }
+
+  // Se é array de números -> receitas = [ x, x, x , x  ] 
+  function somaNumeros(numeros) 
+  {
+    let soma = 0;
+
+    for(let numero of numeros)
+    {
+        soma = soma + numero
+    }
+    return soma
+  }
+
+  for(let usuario of usuarios)
+  {
+        const saldo = calculaSaldo(usuario.receitas, usuario.despesas)
+        
+        if (saldo > 0) {
+            console.log(`${usuario.nome} possui saldo POSITIVO de ${saldo.toFixed(2)}`)
+        } else {
+            console.log(`${usuario.nome} possui saldo NEGATIVO de ${saldo.toFixed(2)}`)
         }
-    }
-    return higherTransaction
-
-}
-
-function getAverageTransactionValue()
-{
-    let averageTransaction = 0
-
-    for(let transaction of user.transactions)
-    {
-        if(transaction.type == 'debit' || transaction.type == 'credit')
-        {
-            averageTransaction += ( transaction.value / user.transactions.length )
-        } 
-    }
-    return averageTransaction
-}
-
-function getTransactionsCount()
-{
-    let transactionsCount = {
-        credit: 0,
-        debit: 0
-    }
-
-    for(let transaction of user.transactions)
-    {
-        if(transaction.type === 'credit')
-        {
-            transactionsCount.credit++
-        }else{
-            transactionsCount.debit++
-        }
-    }
-    return transactionsCount
-}
-
-createTransaction({ type: 'credit', value: 50 })
-createTransaction({ type: 'credit', value: 120 })
-createTransaction({ type: 'debit', value: 80 })
-createTransaction({ type: 'debit', value: 30 })
-
-console.log(getHigherTransactionByType('credit')) // { type: 'credit', value: 120 }
-console.log(getHigherTransactionByType('debit')) // { type: 'debit', value: 80 }
-
-console.log(showBalanceMessage()) // Balance : 60
-
-console.log(getAverageTransactionValue()) // 70
-
-console.log(getTransactionsCount()) // {credit: 2, debit: 2}
+  }

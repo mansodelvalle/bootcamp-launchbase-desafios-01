@@ -1,8 +1,9 @@
+
 /* ============================================
-     DESAFIO 5 - BUSCA POR TECNOLOGIA
+        DESAFIO 5 - CRIAR UM PROGRAMA QUE RETORNA A LISTA DE USUÁRIOS DE UM ARRAY E AS TECNOLOGIAS ESPECIALIZADAS DE CADA USUÁRIO
    ============================================ */
 
-   const usuarios = [
+const usuarios = [
     {
         nome: "Carlos",
         tecnologias: ['HTML', 'CSS']
@@ -18,13 +19,7 @@
 ]
 
 
-for(let usuario of usuarios)
+for( let usuario of usuarios)
 {
-   for(let tecnologia of usuario.tecnologias)
-   {
-       if(tecnologia == 'CSS')
-       {
-           console.log(`O usuário ${usuario.nome} trabalha com ${tecnologia}`)
-       }
-   }
+    console.log(`${usuario.nome} trabalha com ${usuario.tecnologias.join(', ')}`)
 }

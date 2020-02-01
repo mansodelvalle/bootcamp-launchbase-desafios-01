@@ -34,8 +34,14 @@
   - [ Cálculo de IMC ](Desafios-Finalizados/desafio01.js)
   - [ Cálculo de aposentadoria ](Desafios-Finalizados/desafio02.js)
 - [Lidando com objetos e vetores](01-2-lidando-com-objetos-e-vetores.md)
+  - [ Vetores e Objetos ](Desafios-Finalizados/desafio03.js)
+  - [ Construção e impressão de objetos](Desafios-Finalizados/desafio04.js)
 - [Funções e estruturas de repetição](01-3-funcoes-e-estruturas-de-repeticao.md)
+  - [ Usuários e tecnologias](Desafios-Finalizados/desafio05.js)
+  - [ Busca por tecnologia](Desafios-Finalizados/desafio06.js)
+  - [ Soma de despesas e receitas](Desafios-Finalizados/desafio07.js)
 - [Aplicação: Operações bancárias](01-4-aplicacao-operacoes-bancarias.md)
+  - [ Programa de operações bancárias ](Desafios-Finalizados/desafio08.js)
 
 ## 📅 Entrega
 
